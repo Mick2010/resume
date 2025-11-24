@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ewa Ignut - Resume</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 40px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .header {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 40px;
+            border-bottom: 3px solid #b8c5d6;
+            padding-bottom: 30px;
+            align-items: flex-start;
+        }
+
+        .profile-pic {
+            flex-shrink: 0;
+        }
+
+        .profile-pic img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #b8c5d6;
+        }
+
+        .header-info {
+            flex: 1;
+        }
+
+        .name {
+            font-size: 36px;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+
+        .contact-info a {
+            color: #3498db;
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        .about-me {
+            font-size: 14px;
+            line-height: 1.7;
+            color: #555;
+        }
+
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 40px;
+            margin-top: 30px;
+        }
+
+        .sidebar {
+            background-color: #ecf0f7;
+            padding: 25px;
+            border-radius: 8px;
+            height: fit-content;
+        }
+
+        .sidebar h3 {
+            font-size: 16px;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            border-bottom: 2px solid #b8c5d6;
+            padding-bottom: 8px;
+        }
+
+        .sidebar-section {
+            margin-bottom: 25px;
+        }
+
+        .sidebar-section:last-child {
+            margin-bottom: 0;
+        }
+
+        .education-item {
+            margin-bottom: 20px;
+        }
+
+        .degree {
+            font-weight: bold;
+            font-size: 14px;
+            color: #2c3e50;
+        }
+
+        .university {
+            font-size: 12px;
+            color: #666;
+            margin-top: 4px;
+        }
+
+        .year {
+            font-size: 12px;
+            color: #999;
+            margin-top: 4px;
+        }
+
+        .skill-item {
+            font-size: 14px;
+            margin-bottom: 10px;
+            color: #555;
+            padding-left: 15px;
+            position: relative;
+        }
+
+        .skill-item:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #3498db;
+        }
+
+        .language-item {
+            font-size: 14px;
+            margin-bottom: 8px;
+            color: #555;
+        }
+
+        .certificate-item {
+            font-size: 14px;
+            margin-bottom: 8px;
+            color: #555;
+            padding-left: 15px;
+            position: relative;
+        }
+
+        .certificate-item:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #27ae60;
+            font-weight: bold;
+        }
+
+        .main-content h2 {
+            font-size: 20px;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            border-bottom: 2px solid #b8c5d6;
+            padding-bottom: 8px;
+        }
+
+        .job {
+            margin-bottom: 30px;
+            page-break-inside: avoid;
+        }
+
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 5px;
+        }
+
+        .job-title {
+            font-size: 16px;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        .job-dates {
+            font-size: 13px;
+            color: #999;
+            text-transform: uppercase;
+        }
+
+        .job-company {
+            font-size: 13px;
+            color: #666;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            letter-spacing: 0.5px;
+        }
+
+        .job-description {
+            font-size: 14px;
+            color: #555;
+            line-height: 1.7;
+        }
+
+        .job-description ul {
+            list-style: none;
+            margin-left: 0;
+        }
+
+        .job-description li {
+            margin-bottom: 8px;
+            padding-left: 15px;
+            position: relative;
+        }
+
+        .job-description li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #3498db;
+        }
+
+        @media (max-width: 768px) {
+            .two-column {
+                grid-template-columns: 1fr;
+            }
+
+            .container {
+                padding: 20px;
+            }
+
+            .header {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .name {
+                font-size: 28px;
+            }
+        }
+
+        @media print {
+            body {
+                background-color: white;
+                padding: 0;
+            }
+
+            .container {
+                max-width: 100%;
+                box-shadow: none;
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header with Photo -->
+        <div class="header">
+            <div class="profile-pic">
+                <img src="Ewa Photo .HEIC" alt="Ewa Ignut">
+            </div>
+            <div class="header-info">
+                <div class="name">Ewa Ignut</div>
+                <div class="contact-info">
+                    <div>📞 +61 478 951 452</div>
+                    <div>📧 <a href="mailto:eignut99@gmail.com">eignut99@gmail.com</a></div>
+                </div>
+                <div class="about-me">
+                    Experienced bartender and hospitality professional with proven ability to deliver excellent customer service in fast-paced environments. Reliable, adaptable, and committed to creating positive guest experiences. Recently moved to Australia and seeking casual or flexible bar and cafe positions.
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="two-column">
+            <!-- Sidebar -->
+            <div class="sidebar">
+                <!-- Education -->
+                <h3>Education</h3>
+                <div class="sidebar-section">
+                    <div class="education-item">
+                        <div class="degree">MA Psychology</div>
+                        <div class="university">SWPS University of Social Sciences and Humanities</div>
+                        <div class="year">2021-2025</div>
+                    </div>
+                    <div class="education-item">
+                        <div class="degree">MA Psychology (ERASMUS)</div>
+                        <div class="university">Universidad Autónoma de Madrid</div>
+                        <div class="year">2022-2023</div>
+                    </div>
+                    <div class="education-item">
+                        <div class="degree">BA Psychology</div>
+                        <div class="university">SWPS University of Social Sciences and Humanities</div>
+                        <div class="year">2018-2021</div>
+                    </div>
+                </div>
+
+                <!-- Skills -->
+                <h3>Skills</h3>
+                <div class="sidebar-section">
+                    <div class="skill-item">Bartending and drink preparation</div>
+                    <div class="skill-item">Strong communication and interpersonal skills</div>
+                    <div class="skill-item">Multitasking, time management, and organisation in fast-paced environments</div>
+                    <div class="skill-item">Cash handling and POS systems</div>
+                    <div class="skill-item">Customer service excellence</div>
+                    <div class="skill-item">Teamwork, reliability, and hands-on approach</div>
+                </div>
+
+                <!-- Languages -->
+                <h3>Languages</h3>
+                <div class="sidebar-section">
+                    <div class="language-item"><strong>English</strong> - Advanced (C1)</div>
+                    <div class="language-item"><strong>Polish</strong> - Native</div>
+                </div>
+
+                <!-- Certificates -->
+                <h3>Certificates</h3>
+                <div class="sidebar-section">
+                    <div class="certificate-item">RSA Certificate</div>
+                    <div class="certificate-item">First Aid Certificate</div>
+                    <div class="certificate-item">IELTS Academic Certificate</div>
+                </div>
+            </div>
+
+            <!-- Main Content -->
+            <div class="main-content">
+                <h2>Work Experience</h2>
+
+                <!-- Bartender (Most Recent) -->
+                <div class="job">
+                    <div class="job-header">
+                        <div>
+                            <div class="job-title">Bartender</div>
+                            <div class="job-company">Monta Beach Volley Club</div>
+                        </div>
+                        <div class="job-dates">Jun 2024 - Sep 2024</div>
+                    </div>
+                    <div class="job-description">
+                        <ul>
+                            <li>Prepared and served alcoholic and non-alcoholic drinks whilst ensuring excellent customer service</li>
+                            <li>Managed opening and closing duties, including organising the bar and preparing supplies</li>
+                            <li>Maintained bar cleanliness, inventory, and restocked as needed</li>
+                            <li>Worked in a fast-paced, team-oriented environment to create a positive guest experience</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Waitress & Barista & Bar Staff -->
+                <div class="job">
+                    <div class="job-header">
+                        <div>
+                            <div class="job-title">Waitress & Barista & Bar Staff</div>
+                            <div class="job-company">Prosta Historia Restaurant</div>
+                        </div>
+                        <div class="job-dates">Jun 2019 - Oct 2019</div>
+                    </div>
+                    <div class="job-description">
+                        <ul>
+                            <li>Provided table service and prepared drinks at a busy restaurant, ensuring fast and friendly customer experience</li>
+                            <li>Assisted with setup and service at one-off events and private functions</li>
+                            <li>Developed strong organisational, multitasking, and communication skills in a fast-paced environment</li>
+                            <li>Learned to stay calm, efficient, and attentive during high-demand periods</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Scout Leader -->
+                <div class="job">
+                    <div class="job-header">
+                        <div>
+                            <div class="job-title">Scout Leader / Youth Program Coordinator</div>
+                            <div class="job-company">Local Scouting Organisation</div>
+                        </div>
+                        <div class="job-dates">Jul 2014 - Aug 2017</div>
+                    </div>
+                    <div class="job-description">
+                        <ul>
+                            <li>Led year-round educational and outdoor activities for school-aged children</li>
+                            <li>Planned and organised camps, trips, and local events</li>
+                            <li>Designed creative programmes fostering teamwork, leadership, and problem-solving</li>
+                            <li>Ensured a safe, inclusive, and engaging environment for all participants</li>
+                            <li>Developed strong organisational, communication, and leadership skills</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- HR Specialist -->
+                <div class="job">
+                    <div class="job-header">
+                        <div>
+                            <div class="job-title">HR Specialist (Learning & Development / Employer Branding / CSR)</div>
+                            <div class="job-company">Volkswagen Financial Services Poland Sp. z o.o.</div>
+                        </div>
+                        <div class="job-dates">Feb 2022 - Oct 2025</div>
+                    </div>
+                    <div class="job-description">
+                        <ul>
+                            <li>Organised individual and group training sessions for employees across departments</li>
+                            <li>Supported onboarding processes and new hire integration</li>
+                            <li>Created internal communications and contributed to employer branding initiatives</li>
+                            <li>Coordinated CSR projects and business events, including off-site meetings and team trips</li>
+                            <li>Managed recruitment and selection processes for various roles</li>
+                            <li>Assisted in performance management and MBO (Management by Objectives) activities</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Office Assistant / Legal Secretary -->
+                <div class="job">
+                    <div class="job-header">
+                        <div>
+                            <div class="job-title">Office Assistant / Legal Secretary</div>
+                            <div class="job-company">BWHS Law Firm Sp. k.</div>
+                        </div>
+                        <div class="job-dates">Nov 2019 - Oct 2021</div>
+                    </div>
+                    <div class="job-description">
+                        <ul>
+                            <li>Provided administrative support to lawyers and managed daily office operations</li>
+                            <li>Organised meetings, business trips, and client appointments</li>
+                            <li>Maintained records, case files, and various internal registers</li>
+                            <li>Handled correspondence, document preparation, and filing</li>
+                            <li>Ensured smooth workflow and effective communication within the team</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
